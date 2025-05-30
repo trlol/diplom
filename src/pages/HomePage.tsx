@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ArtistCard from '../components/ArtistCard';
 import TrackItem from '../components/TrackItem';
-import SearchForm from '../components/SearchForm';
+import Header from '../components/Header';
 import { getPopularArtists, getPopularTracks } from '../api/lastfm';
 import { Artist } from '../models/artist';
 import { Track } from '../models/track';
@@ -47,17 +47,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="home-page">
-      <header className="main-header">
-        <div className="header-content">
-          <SearchForm onSearch={handleSearch} />
-        </div>
-      </header>
-
-      <header className="main-header">
-        <div className="header-content">
-            <div className="logo">Music</div>
-        </div>
-      </header>
+      <Header onSearch={handleSearch} />
 
       {/*секция артистов*/}
       <h1 className="section-title">Hot right now</h1>

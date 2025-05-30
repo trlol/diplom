@@ -5,6 +5,7 @@ import { search } from '../api/lastfm';
 import { Artist } from '../models/artist';
 import { Track } from '../models/track';
 import SearchForm from '../components/SearchForm';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 
@@ -46,11 +47,13 @@ const SearchResultsPage: React.FC = () => {
 
   return (
     <div className="search-results-page">
+      <Header onSearch={handleSearch} />
+
       <h1 className="search-title">Search results for "{query}"</h1>
       
-      <div className="search-container">
+      {/*<div className="search-container">
         <SearchForm onSearch={handleSearch} />
-      </div>
+      </div>*/}
 
       <div className="toc">
         <h2 className="toc-title">Top Results</h2>

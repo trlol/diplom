@@ -10,8 +10,9 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch, initialValue = '' }) 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (query.trim()) {
-      onSearch(query.trim());
+    const trimmedQuery = query.trim();
+    if (trimmedQuery) {
+      onSearch(trimmedQuery);
     }
   };
 
@@ -23,9 +24,16 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch, initialValue = '' }) 
         className="search-input"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        // Добавляем aria-label для доступности
+        aria-label="Search input"
       />
-      <button type="submit" className="submit-button">
-        Submit
+      <button 
+        type="submit" 
+        className="submit-button"
+        // Добавляем disabled состояние если query пустой
+        disabled={!query.trim()}
+      >
+        Search
       </button>
     </form>
   );

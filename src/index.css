@@ -580,7 +580,26 @@ html, body {
 }
 
 .main-header .submit-button {
-  display: none; 
+  background-color: #d51007;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px; 
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-left: 10px; 
+  white-space: nowrap; 
+}
+
+.main-header .submit-button:hover {
+  background-color: #b30e00;
+}
+
+.main-header .submit-button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .page-content {
@@ -598,6 +617,12 @@ html, body {
   margin-bottom: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #fff;
 }
 
 .section-title {
